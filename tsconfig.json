@@ -3,10 +3,18 @@
     "target": "es2016",
     "experimentalDecorators": true,
     "module": "commonjs",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src/",
+    "baseUrl": "./src",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": [
+    "dist"
+  ]
 }

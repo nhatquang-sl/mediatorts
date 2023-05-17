@@ -1,5 +1,5 @@
-import { delay } from '../utilities';
-import { RegisterHandler, ICommandHandler, ICommand, Result } from '..';
+import { delay } from '../src/utilities';
+import { RegisterHandler, ICommandHandler, ICommand, Result } from '../src';
 
 export class TestCommand implements ICommand {
   constructor(partyId: number) {

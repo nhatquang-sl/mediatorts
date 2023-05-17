@@ -1,5 +1,5 @@
-import { mediator } from '..';
-import { BadRequestError } from '../exceptions';
+import { mediator } from '../src';
+import { BadRequestError } from '../src/exceptions';
 import { TestCommand } from './test-validator';
 
 test('CommandValidator throw BadRequestError', async () => {

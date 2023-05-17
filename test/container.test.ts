@@ -1,4 +1,4 @@
-import { container, mediator } from '..';
+import { container, mediator } from '../src';
 import { TestCommand } from './test-handler';
 
 test('register handler success', async () => {
