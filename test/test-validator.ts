@@ -1,4 +1,4 @@
-import { delay } from '../src/utilities';
+import { delay } from '../utilities';
 import {
   RegisterHandler,
   RegisterValidator,
@@ -6,8 +6,8 @@ import {
   ICommandValidator,
   ICommand,
   Result,
-} from '../src';
-import { BadRequestError } from '../src/exceptions';
+} from '..';
+import { BadRequestError } from '../exceptions';
 
 export class TestCommand implements ICommand {
   constructor(partyId: number) {
