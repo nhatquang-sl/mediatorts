@@ -1,5 +1,5 @@
-import { delay } from '../utilities';
-import { mediator, IPipelineBehavior, ICommand } from '..';
+import { delay } from '../src/utilities';
+import { mediator, IPipelineBehavior, ICommand } from '../src';
 import { TestCommand } from './test-handler';
 
 class Behavior01 implements IPipelineBehavior {

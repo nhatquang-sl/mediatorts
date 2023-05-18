@@ -1,5 +1,5 @@
-import { delay } from '../utilities';
-import { RegisterHandler, ICommandHandler, ICommand, Result } from '..';
+import { delay } from '../src/utilities';
+import { RegisterHandler, ICommandHandler, ICommand } from '../src';
 
 export class TestCommand implements ICommand {
   constructor(partyId: number) {
@@ -9,8 +9,8 @@ export class TestCommand implements ICommand {
 }
 
 @RegisterHandler
-export class TestCommandHandler implements ICommandHandler<TestCommand, Result> {
-  async handle(command: TestCommand): Promise<Result> {
+export class TestCommandHandler implements ICommandHandler<TestCommand, string> {
+  async handle(command: TestCommand): Promise<string> {
     await delay(0);
     return `message from TestCommandHandler with partyId: ${command.partyId}`;
   }

@@ -1,4 +1,4 @@
-import { mediator } from '..';
+import { mediator } from '../src';
 import { TestCommand } from './test-handler';
 
 test('CommandHandler return a string message', async () => {
