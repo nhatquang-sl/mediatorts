@@ -32,3 +32,9 @@ export class ConflictError extends Error {
     else super(JSON.stringify(err));
   }
 }
+
+export class UnprocessableEntityError extends Error {
+  constructor(err: Record<string, string[]>) {
+    super(JSON.stringify(err));
+  }
+}

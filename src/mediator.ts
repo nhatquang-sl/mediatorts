@@ -1,5 +1,5 @@
-import { ICommand, ICommandValidator, ICommandHandler, IPipelineBehavior } from './interfaces';
 import { container } from './container';
+import { ICommand, ICommandHandler, ICommandValidator, IPipelineBehavior } from './interfaces';
 
 export class Mediator {
   private pipelineBehaviors: IPipelineBehavior[] = [];
@@ -26,21 +26,15 @@ export class Mediator {
 
     const validatorClass: any = container.validators[`${cmdName}Validator`];
 
-    try {
-      const behaviors = this.pipelineBehaviors;
-      const next = async () => {
-        if (validatorClass) {
-          const validator: ICommandValidator<ICommand> = new validatorClass();
-          await validator.validate(command);
-        }
-        return await handler.handle(command);
-      };
-      return await this.executePipeline(behaviors.length, command, next);
-    } catch (err) {
-      console.log('--------------------------- EXCEPTION ---------------------------');
-      console.log({ err });
-      throw err;
-    }
+    const behaviors = this.pipelineBehaviors;
+    const next = async () => {
+      if (validatorClass) {
+        const validator: ICommandValidator<ICommand> = new validatorClass();
+        await validator.validate(command);
+      }
+      return await handler.handle(command);
+    };
+    return await this.executePipeline(behaviors.length, command, next);
   }
 }
 
